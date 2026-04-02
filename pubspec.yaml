@@ -1,0 +1,35 @@
+name: flutter_translator
+description: "Desktop-first ARB translation editor."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  auto_route: ^10.0.1
+  bloc: ^9.0.0
+  cupertino_icons: ^1.0.8
+  file_selector: ^1.0.3
+  flutter_bloc: ^9.1.1
+  flutter_hooks: ^0.21.2
+  get_it: ^8.0.3
+  intl: ^0.20.2
+  macos_secure_bookmarks: ^0.2.1
+  path: ^1.9.1
+  shared_preferences: ^2.5.3
+
+dev_dependencies:
+  auto_route_generator: ^10.0.1
+  build_runner: ^2.4.15
+  flutter_lints: ^5.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  generate: true
+  uses-material-design: true

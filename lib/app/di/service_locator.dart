@@ -5,6 +5,7 @@ import '../../core/services/arb_service.dart';
 import '../../core/services/directory_access_service.dart';
 import '../../core/services/directory_picker_service.dart';
 import '../../core/services/project_repository.dart';
+import '../../core/services/whiteboard_repository.dart';
 import '../../core/storage/project_storage.dart';
 import '../router/app_router.dart';
 
@@ -31,6 +32,9 @@ Future<void> configureDependencies() async {
         arbService: getIt<ArbService>(),
         directoryAccessService: getIt<DirectoryAccessService>(),
       ),
+    )
+    ..registerLazySingleton<WhiteboardRepository>(
+      () => WhiteboardRepository(getIt<ProjectStorage>()),
     )
     ..registerLazySingleton<AppRouter>(AppRouter.new);
 }

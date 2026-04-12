@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/project_record.dart';
+import '../models/whiteboard/whiteboard_models.dart';
 
 class ProjectStorage {
   static const _projectsKey = 'projects';
   static const _themeModeKey = 'theme_mode';
+  static const _whiteboardDocumentKey = 'whiteboard_document';
 
   late final SharedPreferences _preferences;
 
@@ -35,5 +37,17 @@ class ProjectStorage {
 
   Future<void> writeThemeMode(ThemeMode mode) {
     return _preferences.setString(_themeModeKey, mode.name);
+  }
+
+  WhiteboardDocument? readWhiteboardDocument() {
+    final rawValue = _preferences.getString(_whiteboardDocumentKey);
+    if (rawValue == null || rawValue.isEmpty) {
+      return null;
+    }
+    return WhiteboardDocument.fromJson(rawValue);
+  }
+
+  Future<void> writeWhiteboardDocument(WhiteboardDocument document) {
+    return _preferences.setString(_whiteboardDocumentKey, document.toJson());
   }
 }

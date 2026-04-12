@@ -130,3 +130,19 @@ class TranslationRouteArgs {
   @override
   int get hashCode => projectId.hashCode ^ key.hashCode;
 }
+
+/// generated route for
+/// [WhiteboardPage]
+class WhiteboardRoute extends PageRouteInfo<void> {
+  const WhiteboardRoute({List<PageRouteInfo>? children})
+    : super(WhiteboardRoute.name, initialChildren: children);
+
+  static const String name = 'WhiteboardRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const WhiteboardPage();
+    },
+  );
+}

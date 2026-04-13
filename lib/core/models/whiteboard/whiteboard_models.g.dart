@@ -64,6 +64,15 @@ ConnectorItemData _$ConnectorItemDataFromJson(Map<String, dynamic> json) =>
       style:
           $enumDecodeNullable(_$ConnectorLineStyleEnumMap, json['style']) ??
           ConnectorLineStyle.straight,
+      family:
+          $enumDecodeNullable(_$ConnectorFamilyEnumMap, json['family']) ??
+          ConnectorFamily.plain,
+      relationKind:
+          $enumDecodeNullable(
+            _$ConnectorRelationKindEnumMap,
+            json['relationKind'],
+          ) ??
+          ConnectorRelationKind.none,
       sourceItemId: json['sourceItemId'] as String?,
       targetItemId: json['targetItemId'] as String?,
       sourceAnchor: $enumDecodeNullable(
@@ -80,6 +89,8 @@ Map<String, dynamic> _$ConnectorItemDataToJson(ConnectorItemData instance) =>
     <String, dynamic>{
       'points': const OffsetListJsonConverter().toJson(instance.points),
       'style': _$ConnectorLineStyleEnumMap[instance.style]!,
+      'family': _$ConnectorFamilyEnumMap[instance.family]!,
+      'relationKind': _$ConnectorRelationKindEnumMap[instance.relationKind]!,
       'sourceItemId': instance.sourceItemId,
       'targetItemId': instance.targetItemId,
       'sourceAnchor': _$ConnectorAnchorEnumMap[instance.sourceAnchor],
@@ -91,6 +102,20 @@ const _$ConnectorLineStyleEnumMap = {
   ConnectorLineStyle.curved: 'curved',
   ConnectorLineStyle.orthogonal: 'orthogonal',
   ConnectorLineStyle.rounded: 'rounded',
+};
+
+const _$ConnectorFamilyEnumMap = {
+  ConnectorFamily.plain: 'plain',
+  ConnectorFamily.database: 'database',
+};
+
+const _$ConnectorRelationKindEnumMap = {
+  ConnectorRelationKind.none: 'none',
+  ConnectorRelationKind.oneToOne: 'oneToOne',
+  ConnectorRelationKind.zeroToOne: 'zeroToOne',
+  ConnectorRelationKind.oneToMany: 'oneToMany',
+  ConnectorRelationKind.zeroToMany: 'zeroToMany',
+  ConnectorRelationKind.manyToMany: 'manyToMany',
 };
 
 const _$ConnectorAnchorEnumMap = {

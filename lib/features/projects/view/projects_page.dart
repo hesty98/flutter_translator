@@ -49,6 +49,11 @@ class _ProjectsView extends HookWidget {
           title: l10n.projectsTitle,
           actions: [
             IconButton(
+              tooltip: 'Icon Picker',
+              onPressed: () => context.router.push(const IconPickerRoute()),
+              icon: const Icon(Icons.grid_view_rounded),
+            ),
+            IconButton(
               tooltip: 'Whiteboard',
               onPressed: () => context.router.push(const WhiteboardRoute()),
               icon: const Icon(Icons.space_dashboard_outlined),
@@ -160,6 +165,11 @@ class _EmptyProjects extends StatelessWidget {
                 onPressed: onCreate,
                 icon: const Icon(Icons.add),
                 label: Text(l10n.addProject),
+              ),
+              OutlinedButton.icon(
+                onPressed: () => context.router.push(const IconPickerRoute()),
+                icon: const Icon(Icons.grid_view_rounded),
+                label: const Text('Icon Picker'),
               ),
               OutlinedButton.icon(
                 onPressed: () => context.router.push(const WhiteboardRoute()),

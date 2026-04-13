@@ -35,3 +35,6 @@ dev_dependencies:
 flutter:
   generate: true
   uses-material-design: true
+  assets:
+    - lib/core/generated/material_icon_taxonomy.json
+    - lib/core/generated/cupertino_icon_taxonomy.json

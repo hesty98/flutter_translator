@@ -11,6 +11,22 @@
 part of 'app_router.dart';
 
 /// generated route for
+/// [IconPickerPage]
+class IconPickerRoute extends PageRouteInfo<void> {
+  const IconPickerRoute({List<PageRouteInfo>? children})
+    : super(IconPickerRoute.name, initialChildren: children);
+
+  static const String name = 'IconPickerRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const IconPickerPage();
+    },
+  );
+}
+
+/// generated route for
 /// [ProjectDetailPage]
 class ProjectDetailRoute extends PageRouteInfo<ProjectDetailRouteArgs> {
   ProjectDetailRoute({
